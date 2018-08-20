@@ -1,9 +1,13 @@
 // a component at its core is just a function that returns html 
 import React from 'react'; 
-
-const person = () => { 
-    return <p> I'm a person and I am {Math.floor (Math.random() * 30 )} years old!</p>
-
+// props refers to properties in the jsx code 
+// state is not available in function components
+const person = (props) => { 
+    return (
+    <div>
+        <p> I'm a {props.name} and I am {props.age} years old!</p>
+        <p>{props.children}</p>
+    </div>)
 }; 
 
 export default person; 

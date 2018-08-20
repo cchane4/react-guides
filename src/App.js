@@ -5,7 +5,15 @@ import './App.css';
 import Person from "./Person/Person"; 
 // react calls render method to render something to the screen 
 // IMPORTANT :every react component has to return or render some html code to the DOM
+// classes have properties or variables of class; one of those properties of components created by extending components is state
 class App extends Component {
+  state = { 
+    persons: [
+    { name: "Max", age: 20 },  
+    { name: "Alex", age: 29 }, 
+    { name: "Steph", age: 46 }
+    ] 
+  } 
   render() {
     return (
       // this code is actually javascript 
@@ -14,7 +22,12 @@ class App extends Component {
       <div className="App">
       <h1> Hi, Im a React App</h1>
       <p> This is really working</p>
-      <Person></Person>
+      <button> Switch Name</button>
+  
+      <Person name={this.state.persons[0].name} age={this.state.persons[0].age}></Person>
+      <Person name={this.state.persons[1].name} age={this.state.persons[1].age}></Person>
+      <Person name={this.state.persons[2].name} age={this.state.persons[2].age}></Person>
+   
       </div>
 
     );
