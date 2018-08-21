@@ -43,6 +43,14 @@ class App extends Component {
 
 
   render() {
+    const style = { 
+      backgroundColor: "red",
+      font: "inherit", 
+      border: '1px solid blue', 
+      padding: "8px",
+      cursor: 'pointer'
+    }; 
+
     return (
       // this code is actually javascript 
       // its just syntactical sugar 
@@ -51,7 +59,9 @@ class App extends Component {
       <div className="App">
       <h1> Hi, Im a React App</h1>
       <p> This is really working</p>
-      <button onClick={this.switchNameHandler.bind(this, "Max")}> Switch Name</button>
+      <button
+      style={style} 
+      onClick={this.switchNameHandler.bind(this, "Max")}> Switch Name</button>
   
       <Person 
       name={this.state.persons[0].name} 

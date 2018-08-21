@@ -1,5 +1,4 @@
-
-
+/* the styles here are global and have to import the file into the jsx file that you want to use the csss features */
 .Person { 
     width: 60%; 
     margin: auto;
