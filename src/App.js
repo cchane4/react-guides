@@ -16,29 +16,44 @@ class App extends Component {
     otherState: "some other value" 
   } 
 
-  switchNameHandler = () => {
+  switchNameHandler = (newName) => {
    // console.log('Was Clicked'); 
    // DONT DO THIS: this.state.persons[0].name = "Max"; 
    this.setState({persons: [
-    { name: "Max", age: 70 },  
+    { name: newName, age: 70 },  
     { name: "Alex", age: 49 }, 
     { name: "Steph", age: 47 }
    ]
   })
   }
+
   render() {
     return (
       // this code is actually javascript 
       // its just syntactical sugar 
       //everything is nested inside one root element (div with App class)
+      // for component interaction we pass reference to the handler in the click method as a  property to our component
       <div className="App">
       <h1> Hi, Im a React App</h1>
       <p> This is really working</p>
-      <button onClick={this.switchNameHandler}> Switch Name</button>
+      <button onClick={this.switchNameHandler.bind(this, "Max")}> Switch Name</button>
   
-      <Person name={this.state.persons[0].name} age={this.state.persons[0].age}></Person>
-      <Person name={this.state.persons[1].name} age={this.state.persons[1].age}></Person>
-      <Person name={this.state.persons[2].name} age={this.state.persons[2].age}></Person>
+      <Person 
+      name={this.state.persons[0].name} 
+      age={this.state.persons[0].age}>
+      </Person>
+
+      <Person 
+      name={this.state.persons[1].name} 
+      age={this.state.persons[1].age}
+      click={this.switchNameHandler.bind(this, "Max!!")}>
+      </Person>
+
+
+      <Person 
+      name={this.state.persons[2].name} 
+      age={this.state.persons[2].age}>
+      </Person>
    
       </div>
 
