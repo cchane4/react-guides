@@ -1,5 +1,6 @@
 // a component at its core is just a function that returns html 
 import React from 'react'; 
+import './Person.css';
 // props refers to properties in the jsx code 
 // state is not available in function components
 // these things dont manipulate your application state
@@ -8,7 +9,7 @@ import React from 'react';
 
 const person = (props) => { 
     return (
-    <div>
+    <div className="Person">
         <p onClick={props.click}> I'm a {props.name} and I am {props.age} years old!</p>
         <p>{props.children}</p>
         <input type="text" onChange={props.changed} value={props.name} /> 

@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from "./Person/Person"; 
+
 // react calls render method to render something to the screen 
 // IMPORTANT :every react component has to return or render some html code to the DOM
 // classes have properties or variables of class; one of those properties of components created by extending components is state
